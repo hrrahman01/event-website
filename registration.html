@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Registration | Global Science Conference 2027</title>
+		<meta
+			name="description"
+			content="Register your interest to attend the Global Science Conference 2027."
+		/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+			rel="stylesheet"
+		/>
+		<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+		<link rel="icon" href="assets/images/favicon/logo_white.png?v=2" type="image/png" />
+		<link href="assets/css/styles.css" rel="stylesheet" />
+	</head>
+	<body data-solid-nav="true">
+		<!-- ================= NAVBAR ================= -->
+		<nav
+			id="siteNavbar"
+			class="navbar navbar-expand-lg fixed-top py-3"
+			data-bs-theme="dark"
+			aria-label="Main navigation"
+		>
+			<div class="container">
+				<a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+					<span
+						class="brandMark d-inline-flex align-items-center justify-content-center rounded-3 bg-warning text-primary fs-5"
+					>
+						<i class="fa-solid fa-atom" aria-hidden="true"></i>
+					</span>
+					<span class="lh-sm">
+						Global Science
+						<small class="d-block fw-normal opacity-75 fs-6">Conference 2027</small>
+					</span>
+				</a>
+
+				<button
+					class="navbar-toggler border-0"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navMenu"
+					aria-controls="navMenu"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navMenu">
+					<ul
+						class="navbar-nav ms-auto flex-lg-row align-items-lg-center gap-2 pt-3 pt-lg-0"
+					>
+						<li class="nav-item">
+							<a
+								class="navBtnOutline btn btn-outline-light rounded-pill px-4 fw-semibold w-100"
+								href="abstract.html"
+								>Abstract Submission</a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="navBtnCta btn btn-warning rounded-pill px-4 fw-bold w-100"
+								href="registration.html"
+								>Registration</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- ================= PAGE HEADER ================= -->
+		<header class="pageHeader text-white">
+			<div class="container">
+				<span
+					class="badge rounded-pill text-bg-warning text-primary px-3 py-2 mb-3"
+					data-aos="fade-down"
+				>
+					<i class="fa-solid fa-users me-1" aria-hidden="true"></i> Registration Open
+				</span>
+				<h1 class="text-white fw-bold display-5" data-aos="fade-up" data-aos-delay="100">
+					Register Your Interest
+				</h1>
+				<p class="lead mb-0 opacity-75" data-aos="fade-up" data-aos-delay="200">
+					Complete the form below. Our team will contact you to confirm your registration.
+				</p>
+			</div>
+		</header>
+
+		<!-- ================= FORM ================= -->
+		<main class="container formWrap">
+			<div class="card formCard border-0 shadow" data-aos="fade-up">
+				<div class="card-body p-4 p-lg-5">
+					<form id="registrationForm" novalidate>
+						<!-- Honeypot (bots fill this, humans never see it) -->
+						<input
+							type="text"
+							name="website"
+							class="d-none"
+							tabindex="-1"
+							autocomplete="off"
+							aria-hidden="true"
+						/>
+
+						<h2 class="h5 fw-bold mb-3" data-aos="fade-right">Personal Details</h2>
+						<div class="row g-3 mb-4">
+							<div class="col-md-3" data-aos="fade-up">
+								<label for="regTitle" class="form-label fw-semibold"
+									>Title <span class="text-danger">*</span></label
+								>
+								<select id="regTitle" name="title" class="form-select" required>
+									<option value="" selected disabled>Select</option>
+									<option>Dr.</option>
+									<option>Prof.</option>
+									<option>Mr.</option>
+									<option>Ms.</option>
+									<option>Other</option>
+								</select>
+								<div class="invalid-feedback">Please select a title.</div>
+							</div>
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
+								<label for="regFirstName" class="form-label fw-semibold"
+									>First Name <span class="text-danger">*</span></label
+								>
+								<input
+									type="text"
+									id="regFirstName"
+									name="first_name"
+									class="form-control"
+									maxlength="60"
+									autocomplete="given-name"
+									required
+								/>
+								<div class="invalid-feedback">Please enter your first name.</div>
+							</div>
+							<div class="col-md-5" data-aos="fade-up" data-aos-delay="100">
+								<label for="regLastName" class="form-label fw-semibold"
+									>Last Name <span class="text-danger">*</span></label
+								>
+								<input
+									type="text"
+									id="regLastName"
+									name="last_name"
+									class="form-control"
+									maxlength="60"
+									autocomplete="family-name"
+									required
+								/>
+								<div class="invalid-feedback">Please enter your last name.</div>
+							</div>
+
+							<div class="col-md-6" data-aos="fade-up">
+								<label for="regEmail" class="form-label fw-semibold"
+									>Email Address <span class="text-danger">*</span></label
+								>
+								<input
+									type="email"
+									id="regEmail"
+									name="email"
+									class="form-control"
+									maxlength="120"
+									autocomplete="email"
+									required
+								/>
+								<div class="invalid-feedback">
+									Please enter a valid email address.
+								</div>
+							</div>
+
+							<div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+								<label for="regPhone" class="form-label fw-semibold"
+									>Phone Number <span class="text-danger">*</span></label
+								>
+								<div class="input-group">
+									<select
+										id="regPhoneCode"
+										name="phone_code"
+										class="form-select phoneCode"
+										aria-label="Country code"
+										required
+									></select>
+									<input
+										type="tel"
+										id="regPhone"
+										name="phone"
+										class="form-control"
+										inputmode="numeric"
+										pattern="[0-9 ]{6,15}"
+										maxlength="15"
+										autocomplete="tel-national"
+										placeholder="9876543210"
+										required
+									/>
+									<div class="invalid-feedback">
+										Enter a valid phone number (6–15 digits).
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<h2 class="h5 fw-bold mb-3" data-aos="fade-right">Professional Details</h2>
+						<div class="row g-3 mb-4">
+							<div class="col-md-6" data-aos="fade-up">
+								<label for="regCountry" class="form-label fw-semibold"
+									>Country <span class="text-danger">*</span></label
+								>
+								<select
+									id="regCountry"
+									name="country"
+									class="form-select"
+									required
+								></select>
+								<div class="invalid-feedback">Please select your country.</div>
+							</div>
+							<div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+								<label for="regOrg" class="form-label fw-semibold"
+									>Organization / University
+									<span class="text-danger">*</span></label
+								>
+								<input
+									type="text"
+									id="regOrg"
+									name="organization"
+									class="form-control"
+									maxlength="150"
+									autocomplete="organization"
+									required
+								/>
+								<div class="invalid-feedback">Please enter your organization.</div>
+							</div>
+							<div class="col-md-6" data-aos="fade-up">
+								<label for="regDesignation" class="form-label fw-semibold"
+									>Designation <span class="text-danger">*</span></label
+								>
+								<input
+									type="text"
+									id="regDesignation"
+									name="designation"
+									class="form-control"
+									maxlength="100"
+									autocomplete="organization-title"
+									required
+								/>
+								<div class="invalid-feedback">Please enter your designation.</div>
+							</div>
+							<div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+								<label for="regType" class="form-label fw-semibold"
+									>Participation <span class="text-danger">*</span></label
+								>
+								<select
+									id="regType"
+									name="participation_type"
+									class="form-select"
+									required
+								>
+									<option value="" selected disabled>Select</option>
+									<option>In-person</option>
+									<option>Virtual</option>
+								</select>
+								<div class="invalid-feedback">Please select a type.</div>
+							</div>
+							<div class="col-md-3">
+								<label for="regParticipants" class="form-label fw-semibold">Number of participants</label>
+								<input id="regParticipants" name="participant_count" class="form-control" type="number" min="1" max="999" step="1" value="1" required />
+								<div class="invalid-feedback">Enter a whole number from 1 to 999.</div>
+							</div>
+						</div>
+						<fieldset class="mb-4">
+							<legend class="h5 fw-bold mb-3">Registration pricing (USD per participant)</legend>
+							<div class="row row-cols-1 row-cols-md-3 g-3">
+								<div class="col">
+									<div class="border rounded-3 p-3 h-100 bg-body-tertiary">
+										<h3 class="h6 fw-bold mb-3">Early Bird Registration</h3>
+										<label class="d-flex align-items-center gap-2 border rounded-2 bg-body p-2 mb-2">
+											<input class="form-check-input flex-shrink-0 mt-0" type="radio" name="registration_rate"
+												value="Early Bird|Academic" data-price-cents="67600" required />
+											<span>Academic</span><strong class="ms-auto">$676</strong>
+										</label>
+										<label class="d-flex align-items-center gap-2 border rounded-2 bg-body p-2 mb-2">
+											<input class="form-check-input flex-shrink-0 mt-0" type="radio" name="registration_rate"
+												value="Early Bird|Business" data-price-cents="78000" required />
+											<span>Business</span><strong class="ms-auto">$780</strong>
+										</label>
+										<label class="d-flex align-items-center gap-2 border rounded-2 bg-body p-2 mb-2">
+											<input class="form-check-input flex-shrink-0 mt-0" type="radio" name="registration_rate"
+												value="Early Bird|Student" data-price-cents="41600" required />
+											<span>Student</span><strong class="ms-auto">$416</strong>
+										</label>
+									</div>
+								</div>
+								<div class="col">
+									<div class="border rounded-3 p-3 h-100 bg-body-tertiary">
+										<h3 class="h6 fw-bold mb-3">Regular Registration</h3>
+										<label class="d-flex align-items-center gap-2 border rounded-2 bg-body p-2 mb-2">
+											<input class="form-check-input flex-shrink-0 mt-0" type="radio" name="registration_rate"
+												value="Regular|Academic" data-price-cents="78000" required />
+											<span>Academic</span><strong class="ms-auto">$780</strong>
+										</label>
+										<label class="d-flex align-items-center gap-2 border rounded-2 bg-body p-2 mb-2">
+											<input class="form-check-input flex-shrink-0 mt-0" type="radio" name="registration_rate"
+												value="Regular|Business" data-price-cents="88400" required />
+											<span>Business</span><strong class="ms-auto">$884</strong>
+										</label>
+										<label class="d-flex align-items-center gap-2 border rounded-2 bg-body p-2 mb-2">
+											<input class="form-check-input flex-shrink-0 mt-0" type="radio" name="registration_rate"
+												value="Regular|Student" data-price-cents="52000" required />
+											<span>Student</span><strong class="ms-auto">$520</strong>
+										</label>
+									</div>
+								</div>
+								<div class="col">
+									<div class="border rounded-3 p-3 h-100 bg-body-tertiary">
+										<h3 class="h6 fw-bold mb-3">Final Registration</h3>
+										<label class="d-flex align-items-center gap-2 border rounded-2 bg-body p-2 mb-2">
+											<input class="form-check-input flex-shrink-0 mt-0" type="radio" name="registration_rate"
+												value="Final|Academic" data-price-cents="88400" required />
+											<span>Academic</span><strong class="ms-auto">$884</strong>
+										</label>
+										<label class="d-flex align-items-center gap-2 border rounded-2 bg-body p-2 mb-2">
+											<input class="form-check-input flex-shrink-0 mt-0" type="radio" name="registration_rate"
+												value="Final|Business" data-price-cents="98800" required />
+											<span>Business</span><strong class="ms-auto">$988</strong>
+										</label>
+										<label class="d-flex align-items-center gap-2 border rounded-2 bg-body p-2 mb-2">
+											<input class="form-check-input flex-shrink-0 mt-0" type="radio" name="registration_rate"
+												value="Final|Student" data-price-cents="62400" required />
+											<span>Student</span><strong class="ms-auto">$624</strong>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div id="regRateError" class="text-danger small mt-2" hidden>Please select a registration rate.</div>
+						</fieldset>
+
+
+						<h2 class="h5 fw-bold mb-3" data-aos="fade-right">
+							Additional Information
+						</h2>
+						<div class="row g-3 mb-4">
+							<div class="col-md-6" data-aos="fade-up">
+								<label for="regDiet" class="form-label fw-semibold"
+									>Dietary Requirements
+									<span class="text-body-secondary fw-normal"
+										>(optional)</span
+									></label
+								>
+								<input
+									type="text"
+									id="regDiet"
+									name="dietary_requirements"
+									class="form-control"
+									maxlength="150"
+									placeholder="e.g. Vegetarian, Halal"
+								/>
+							</div>
+							<div class="col-12" data-aos="fade-up">
+								<label for="regMessage" class="form-label fw-semibold"
+									>Additional Message
+									<span class="text-body-secondary fw-normal"
+										>(optional)</span
+									></label
+								>
+								<textarea
+									id="regMessage"
+									name="message"
+									class="form-control"
+									rows="3"
+									maxlength="1000"
+								></textarea>
+							</div>
+						</div>
+
+						<div class="form-check mb-4" data-aos="fade-up">
+							<input
+								class="form-check-input"
+								type="checkbox"
+								id="regConsent"
+								name="consent"
+								value="1"
+								required
+							/>
+							<label class="form-check-label" for="regConsent">
+								I agree to the
+								<a href="#" class="text-secondary">Privacy Policy</a> and consent to
+								my data being processed for this event.
+								<span class="text-danger">*</span>
+							</label>
+							<div class="invalid-feedback">You must accept to continue.</div>
+						</div>
+
+					</form>
+					<section class="border rounded-3 bg-body-tertiary p-3 p-md-4 mb-4" aria-labelledby="regSummaryTitle">
+						<h2 id="regSummaryTitle" class="h5 fw-bold mb-3">Registration summary (USD)</h2>
+						<dl id="regSummary" class="mb-0" aria-live="polite" aria-atomic="true">
+							<div class="d-flex justify-content-between gap-3 mb-2"><dt>Registration category</dt><dd class="mb-0 text-end" data-summary="category">Select a category</dd></div>
+							<div class="d-flex justify-content-between gap-3 mb-2"><dt>Registration tier</dt><dd class="mb-0" data-summary="tier">&mdash;</dd></div>
+							<div class="d-flex justify-content-between gap-3 mb-2"><dt>Price per participant</dt><dd class="mb-0" data-summary="price">&mdash;</dd></div>
+							<div class="d-flex justify-content-between gap-3 mb-2"><dt>Participants</dt><dd class="mb-0" data-summary="count">1</dd></div>
+							<div class="d-flex justify-content-between gap-3 mb-2"><dt>Subtotal</dt><dd class="mb-0" data-summary="subtotal">&mdash;</dd></div>
+							<div class="d-flex justify-content-between gap-3"><dt>GST (10%)</dt><dd class="mb-0" data-summary="gst">&mdash;</dd></div>
+							<div class="d-flex justify-content-between gap-3 border-top mt-3 pt-3 fs-5 fw-bold"><dt>Total amount</dt><dd class="mb-0" data-summary="total">&mdash;</dd></div>
+						</dl>
+					</section>
+					<p class="text-body-secondary text-center">Pay submits your registration for payment follow-up by the conference team.</p>
+					<div class="d-flex flex-wrap justify-content-center gap-3">
+						<button
+							type="submit"
+							form="registrationForm"
+							id="regSubmit"
+							class="btn btn-warning btn-lg rounded-pill px-5 fw-bold"
+							data-aos="zoom-in"
+						>
+							<span
+								class="spinner-border spinner-border-sm me-2 d-none"
+								role="status"
+								aria-hidden="true"
+							></span>
+							<span class="btnLabel">Pay</span>
+						</button>
+						<button type="reset" form="registrationForm" id="regReset" class="btn btn-outline-secondary btn-lg rounded-pill px-5 fw-bold">Reset</button>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- ================= FOOTER ================= -->
+		<footer class="siteFooter text-center py-4">
+			<div class="container small">
+				&copy; <span id="footerYear">2027</span> Global Science Conference. All rights
+				reserved.
+			</div>
+		</footer>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			defer
+		></script>
+		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js"
+			defer
+		></script>
+		<script src="assets/js/main.js" defer></script>
+	</body>
+</html>

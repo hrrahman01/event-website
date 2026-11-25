@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex, nofollow" />
+		<title>Admin Panel | Global Science Conference</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="icon" href="assets/images/favicon/logo_white.png?v=2" type="image/png" />
+		<link href="assets/css/styles.css" rel="stylesheet" />
+	</head>
+	<body class="adminBody">
+		<!-- ================= SIDEBAR ================= -->
+		<aside id="adminSidebar" class="adminSidebar" aria-label="Admin navigation">
+			<div class="sidebarBrand d-flex align-items-center gap-2 px-4">
+				<span
+					class="brandMark d-inline-flex align-items-center justify-content-center rounded-3 bg-warning text-primary fs-5"
+				>
+					<i class="fa-solid fa-atom" aria-hidden="true"></i>
+				</span>
+				<span class="text-white fw-bold lh-sm"
+					>Conference<small class="d-block fw-normal opacity-75">Admin Panel</small></span
+				>
+			</div>
+
+			<nav class="sidebarNav nav flex-column px-3 py-3" id="sidebarNav">
+				<a class="sidebarLink active" href="#dashboard" data-view="dashboard"
+					><i class="fa-solid fa-gauge-high"></i> Dashboard</a
+				>
+				<a class="sidebarLink" href="#registrations" data-view="registrations"
+					><i class="fa-solid fa-users"></i> Registrations</a
+				>
+				<a class="sidebarLink" href="#abstracts" data-view="abstracts"
+					><i class="fa-solid fa-file-lines"></i> Abstract Submissions</a
+				>
+				<a class="sidebarLink" href="#settings" data-view="settings"
+					><i class="fa-solid fa-sliders"></i> Event Settings</a
+				>
+				<a class="sidebarLink" href="#password" data-view="password"
+					><i class="fa-solid fa-key"></i> Change Password</a
+				>
+				<a class="sidebarLink mt-3" href="#logout" id="logoutLink"
+					><i class="fa-solid fa-right-from-bracket"></i> Logout</a
+				>
+			</nav>
+		</aside>
+		<div id="sidebarBackdrop" class="sidebarBackdrop"></div>
+
+		<!-- ================= MAIN ================= -->
+		<div class="adminMain">
+			<!-- Top bar -->
+			<header class="adminTopbar d-flex align-items-center gap-3 px-3 px-lg-4">
+				<button
+					type="button"
+					id="sidebarToggle"
+					class="btn btn-light border"
+					aria-label="Toggle sidebar"
+					aria-controls="adminSidebar"
+				>
+					<i class="fa-solid fa-bars"></i>
+				</button>
+
+				<nav aria-label="breadcrumb" class="d-none d-sm-block">
+					<ol class="breadcrumb mb-0 small">
+						<li class="breadcrumb-item">
+							<a href="#dashboard" class="text-decoration-none">Admin</a>
+						</li>
+						<li
+							class="breadcrumb-item active"
+							id="breadcrumbCurrent"
+							aria-current="page"
+						>
+							Dashboard
+						</li>
+					</ol>
+				</nav>
+
+				<div class="ms-auto d-flex align-items-center gap-2">
+					<!-- Notifications -->
+					<div class="dropdown">
+						<button
+							class="btn btn-light border position-relative"
+							data-bs-toggle="dropdown"
+							aria-expanded="false"
+							aria-label="Notifications"
+						>
+							<i class="fa-regular fa-bell"></i>
+							<span
+								id="notifyCount"
+								class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none"
+								>0</span
+							>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end shadow border-0 notifyMenu">
+							<li><h6 class="dropdown-header">Notifications</h6></li>
+							<li>
+								<a
+									class="dropdown-item small"
+									href="#registrations"
+									data-view-link="registrations"
+									id="notifyRegs"
+									>0 pending registrations</a
+								>
+							</li>
+							<li>
+								<a
+									class="dropdown-item small"
+									href="#abstracts"
+									data-view-link="abstracts"
+									id="notifyAbs"
+									>0 abstracts awaiting review</a
+								>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Profile -->
+					<div class="dropdown">
+						<button
+							class="btn btn-light border d-flex align-items-center gap-2"
+							data-bs-toggle="dropdown"
+							aria-expanded="false"
+						>
+							<span class="avatarCircle">A</span>
+							<span class="d-none d-md-inline fw-semibold small">Admin</span>
+							<i class="fa-solid fa-chevron-down small"></i>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end shadow border-0">
+							<li>
+								<a class="dropdown-item" href="#password" data-view-link="password"
+									><i class="fa-solid fa-key me-2"></i>Change Password</a
+								>
+							</li>
+							<li><hr class="dropdown-divider" /></li>
+							<li>
+								<a class="dropdown-item text-danger" href="#logout" id="logoutMenu"
+									><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</header>
+
+			<main class="p-3 p-lg-4">
+				<!-- ========== DASHBOARD ========== -->
+				<section id="view-dashboard" class="adminView">
+					<h1 class="h3 fw-bold mb-4">Dashboard</h1>
+
+					<div class="row g-3 mb-4" id="statCards"></div>
+
+					<div class="row g-3 mb-4">
+						<div class="col-lg-6">
+							<div class="card border-0 shadow-sm h-100">
+								<div class="card-body">
+									<h2 class="h6 fw-bold">Registration Trend</h2>
+									<div class="chartBox">
+										<canvas
+											id="chartRegTrend"
+											aria-label="Registration trend chart"
+											role="img"
+										></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="card border-0 shadow-sm h-100">
+								<div class="card-body">
+									<h2 class="h6 fw-bold">Abstract Submission Trend</h2>
+									<div class="chartBox">
+										<canvas
+											id="chartAbsTrend"
+											aria-label="Abstract trend chart"
+											role="img"
+										></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="card border-0 shadow-sm h-100">
+								<div class="card-body">
+									<h2 class="h6 fw-bold">Country-wise Participants</h2>
+									<div class="chartBox">
+										<canvas
+											id="chartCountry"
+											aria-label="Participants by country"
+											role="img"
+										></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="card border-0 shadow-sm h-100">
+								<div class="card-body">
+									<h2 class="h6 fw-bold">Registration Categories</h2>
+									<div class="chartBox">
+										<canvas
+											id="chartCategory"
+											aria-label="Registrations by category"
+											role="img"
+										></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row g-3">
+						<div class="col-xl-6">
+							<div class="card border-0 shadow-sm h-100">
+								<div class="card-body">
+									<h2 class="h6 fw-bold mb-3">Recent Registrations</h2>
+									<div class="table-responsive">
+										<table class="table align-middle mb-0">
+											<thead>
+												<tr>
+													<th>ID</th>
+													<th>Name</th>
+													<th>Status</th>
+												</tr>
+											</thead>
+											<tbody id="recentRegs"></tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-6">
+							<div class="card border-0 shadow-sm h-100">
+								<div class="card-body">
+									<h2 class="h6 fw-bold mb-3">Recent Abstract Submissions</h2>
+									<div class="table-responsive">
+										<table class="table align-middle mb-0">
+											<thead>
+												<tr>
+													<th>ID</th>
+													<th>Title</th>
+													<th>Status</th>
+												</tr>
+											</thead>
+											<tbody id="recentAbs"></tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- ========== REGISTRATIONS ========== -->
+				<section id="view-registrations" class="adminView d-none">
+					<div
+						class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3"
+					>
+						<h1 class="h3 fw-bold mb-0">Registrations</h1>
+						<button type="button" class="btn btn-outline-primary" id="regExport">
+							<i class="fa-solid fa-file-csv me-2"></i>Export CSV
+						</button>
+					</div>
+
+					<div class="card border-0 shadow-sm">
+						<div class="card-body">
+							<div class="row g-2 mb-3">
+								<div class="col-md-6">
+									<input
+										type="search"
+										id="regSearch"
+										class="form-control"
+										placeholder="Search name, email or reference ID"
+										aria-label="Search registrations"
+									/>
+								</div>
+								<div class="col-md-3">
+									<select
+										id="regStatusFilter"
+										class="form-select"
+										aria-label="Filter by status"
+									>
+										<option value="">All statuses</option>
+										<option>Pending</option>
+										<option>Confirmed</option>
+										<option>Rejected</option>
+									</select>
+								</div>
+								<div class="col-md-3">
+									<select
+										id="regCategoryFilter"
+										class="form-select"
+										aria-label="Filter by category"
+									>
+										<option value="">All categories</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table table-hover align-middle mb-0">
+									<thead>
+										<tr>
+											<th>#</th>
+											<th>Reg. ID</th>
+											<th>Name</th>
+											<th>Email</th>
+											<th>Country</th>
+											<th>Category</th>
+											<th>Type</th>
+											<th>Date</th>
+											<th>Status</th>
+											<th class="text-end">Actions</th>
+										</tr>
+									</thead>
+									<tbody id="regTable"></tbody>
+								</table>
+							</div>
+
+							<div
+								class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-3"
+							>
+								<small class="text-body-secondary" id="regInfo"></small>
+								<div class="btn-group" id="regPager"></div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- ========== ABSTRACTS ========== -->
+				<section id="view-abstracts" class="adminView d-none">
+					<div
+						class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3"
+					>
+						<h1 class="h3 fw-bold mb-0">Abstract Submissions</h1>
+						<button type="button" class="btn btn-outline-primary" id="absExport">
+							<i class="fa-solid fa-file-csv me-2"></i>Export CSV
+						</button>
+					</div>
+
+					<div class="card border-0 shadow-sm">
+						<div class="card-body">
+							<div class="row g-2 mb-3">
+								<div class="col-md-6">
+									<input
+										type="search"
+										id="absSearch"
+										class="form-control"
+										placeholder="Search author, title or abstract ID"
+										aria-label="Search abstracts"
+									/>
+								</div>
+								<div class="col-md-3">
+									<select
+										id="absStatusFilter"
+										class="form-select"
+										aria-label="Filter by status"
+									>
+										<option value="">All statuses</option>
+										<option>Pending</option>
+										<option>Under Review</option>
+										<option>Accepted</option>
+										<option>Rejected</option>
+										<option>Revision Required</option>
+									</select>
+								</div>
+								<div class="col-md-3">
+									<select
+										id="absTrackFilter"
+										class="form-select"
+										aria-label="Filter by track"
+									>
+										<option value="">All tracks</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table table-hover align-middle mb-0">
+									<thead>
+										<tr>
+											<th>#</th>
+											<th>Abstract ID</th>
+											<th>Author</th>
+											<th>Title</th>
+											<th>Track</th>
+											<th>Type</th>
+											<th>Date</th>
+											<th>Status</th>
+											<th class="text-end">Actions</th>
+										</tr>
+									</thead>
+									<tbody id="absTable"></tbody>
+								</table>
+							</div>
+
+							<div
+								class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-3"
+							>
+								<small class="text-body-secondary" id="absInfo"></small>
+								<div class="btn-group" id="absPager"></div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- ========== EVENT SETTINGS ========== -->
+				<section id="view-settings" class="adminView d-none">
+					<h1 class="h3 fw-bold mb-3">Event Settings</h1>
+					<form id="settingsForm" novalidate>
+						<div class="card border-0 shadow-sm mb-3">
+							<div class="card-body">
+								<h2 class="h6 fw-bold mb-3">General</h2>
+								<div class="row g-3">
+									<div class="col-md-6">
+										<label class="form-label fw-semibold" for="setName"
+											>Event name</label
+										>
+										<input
+											type="text"
+											id="setName"
+											class="form-control"
+											value="Global Science Conference 2027"
+										/>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label fw-semibold" for="setTheme"
+											>Conference theme</label
+										>
+										<input
+											type="text"
+											id="setTheme"
+											class="form-control"
+											value="Innovation, Collaboration and the Future of Research"
+										/>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label fw-semibold" for="setLogo"
+											>Event logo</label
+										>
+										<input
+											type="file"
+											id="setLogo"
+											class="form-control"
+											accept="image/png,image/jpeg,image/webp"
+										/>
+									</div>
+									<div class="col-md-3">
+										<label class="form-label fw-semibold" for="setStart"
+											>Start date</label
+										>
+										<input
+											type="date"
+											id="setStart"
+											class="form-control"
+											value="2027-03-12"
+										/>
+									</div>
+									<div class="col-md-3">
+										<label class="form-label fw-semibold" for="setEnd"
+											>End date</label
+										>
+										<input
+											type="date"
+											id="setEnd"
+											class="form-control"
+											value="2027-03-14"
+										/>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label fw-semibold" for="setVenue"
+											>Venue</label
+										>
+										<input
+											type="text"
+											id="setVenue"
+											class="form-control"
+											value="Venue Name"
+										/>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label fw-semibold" for="setCity"
+											>City and country</label
+										>
+										<input
+											type="text"
+											id="setCity"
+											class="form-control"
+											value="City, Country"
+										/>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label fw-semibold" for="setRegDeadline"
+											>Registration deadline</label
+										>
+										<input
+											type="date"
+											id="setRegDeadline"
+											class="form-control"
+											value="2027-02-28"
+										/>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label fw-semibold" for="setAbsDeadline"
+											>Abstract submission deadline</label
+										>
+										<input
+											type="date"
+											id="setAbsDeadline"
+											class="form-control"
+											value="2026-11-30"
+										/>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label fw-semibold" for="setEmail"
+											>Contact email</label
+										>
+										<input
+											type="email"
+											id="setEmail"
+											class="form-control"
+											value="info@example.com"
+										/>
+									</div>
+									<div class="col-md-6">
+										<label class="form-label fw-semibold" for="setPhone"
+											>Contact number</label
+										>
+										<input
+											type="tel"
+											id="setPhone"
+											class="form-control"
+											value="+00 000 000 0000"
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="card border-0 shadow-sm mb-3">
+							<div class="card-body">
+								<h2 class="h6 fw-bold mb-3">Hero Slides</h2>
+								<div class="accordion" id="slideAccordion">
+									<!-- Slides are generated by JS -->
+								</div>
+							</div>
+						</div>
+
+						<div class="card border-0 shadow-sm mb-3">
+							<div class="card-body">
+								<h2 class="h6 fw-bold mb-3">Submission Controls</h2>
+								<div class="form-check form-switch mb-2">
+									<input
+										class="form-check-input"
+										type="checkbox"
+										role="switch"
+										id="setRegOpen"
+										checked
+									/>
+									<label class="form-check-label" for="setRegOpen"
+										>Registration is open</label
+									>
+								</div>
+								<div class="form-check form-switch mb-3">
+									<input
+										class="form-check-input"
+										type="checkbox"
+										role="switch"
+										id="setAbsOpen"
+										checked
+									/>
+									<label class="form-check-label" for="setAbsOpen"
+										>Abstract submission is open</label
+									>
+								</div>
+								<div class="col-md-4 px-0">
+									<label class="form-label fw-semibold" for="setWordLimit"
+										>Abstract word limit</label
+									>
+									<input
+										type="number"
+										id="setWordLimit"
+										class="form-control"
+										value="300"
+										min="50"
+										max="2000"
+									/>
+								</div>
+							</div>
+						</div>
+
+						<button
+							type="submit"
+							class="btn btn-warning btn-lg rounded-pill px-5 fw-bold"
+						>
+							Save Settings
+						</button>
+					</form>
+				</section>
+
+				<!-- ========== CHANGE PASSWORD ========== -->
+				<section id="view-password" class="adminView d-none">
+					<h1 class="h3 fw-bold mb-3">Change Password</h1>
+					<div class="card border-0 shadow-sm passwordCard">
+						<div class="card-body p-4">
+							<form id="passwordForm" novalidate>
+								<div class="mb-3">
+									<label class="form-label fw-semibold" for="pwCurrent"
+										>Current password</label
+									>
+									<input
+										type="password"
+										id="pwCurrent"
+										class="form-control"
+										autocomplete="current-password"
+										required
+									/>
+									<div class="invalid-feedback">Enter your current password.</div>
+								</div>
+								<div class="mb-3">
+									<label class="form-label fw-semibold" for="pwNew"
+										>New password</label
+									>
+									<input
+										type="password"
+										id="pwNew"
+										class="form-control"
+										autocomplete="new-password"
+										minlength="10"
+										required
+									/>
+									<div class="form-text">At least 10 characters.</div>
+									<div class="invalid-feedback">
+										Password must be at least 10 characters.
+									</div>
+								</div>
+								<div class="mb-4">
+									<label class="form-label fw-semibold" for="pwConfirm"
+										>Confirm new password</label
+									>
+									<input
+										type="password"
+										id="pwConfirm"
+										class="form-control"
+										autocomplete="new-password"
+										required
+									/>
+									<div class="invalid-feedback">Passwords do not match.</div>
+								</div>
+								<button
+									type="submit"
+									class="btn btn-warning rounded-pill px-4 fw-bold"
+								>
+									Update Password
+								</button>
+							</form>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+
+		<!-- ================= DETAIL MODAL ================= -->
+		<div
+			class="modal fade"
+			id="detailModal"
+			tabindex="-1"
+			aria-labelledby="detailTitle"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+				<div class="modal-content border-0">
+					<div class="modal-header">
+						<h2 class="modal-title h5 fw-bold" id="detailTitle">Details</h2>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body" id="detailBody"></div>
+					<div class="modal-footer" id="detailFooter"></div>
+				</div>
+			</div>
+		</div>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			defer
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"
+			defer
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js"
+			defer
+		></script>
+		<script src="assets/js/main.js" defer></script>
+	</body>
+</html>

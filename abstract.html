@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Abstract Submission | Global Science Conference 2027</title>
+		<meta
+			name="description"
+			content="Submit your abstract for the Global Science Conference 2027."
+		/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+			rel="stylesheet"
+		/>
+		<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+		<link rel="icon" href="assets/images/favicon/logo_white.png?v=2" type="image/png" />
+		<link href="assets/css/styles.css" rel="stylesheet" />
+	</head>
+	<body data-solid-nav="true">
+		<!-- ================= NAVBAR ================= -->
+		<nav
+			id="siteNavbar"
+			class="navbar navbar-expand-lg fixed-top py-3"
+			data-bs-theme="dark"
+			aria-label="Main navigation"
+		>
+			<div class="container">
+				<a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+					<span
+						class="brandMark d-inline-flex align-items-center justify-content-center rounded-3 bg-warning text-primary fs-5"
+					>
+						<i class="fa-solid fa-atom" aria-hidden="true"></i>
+					</span>
+					<span class="lh-sm">
+						Global Science
+						<small class="d-block fw-normal opacity-75 fs-6">Conference 2027</small>
+					</span>
+				</a>
+
+				<button
+					class="navbar-toggler border-0"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navMenu"
+					aria-controls="navMenu"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navMenu">
+					<ul
+						class="navbar-nav ms-auto flex-lg-row align-items-lg-center gap-2 pt-3 pt-lg-0"
+					>
+						<li class="nav-item">
+							<a
+								class="navBtnOutline btn btn-outline-light rounded-pill px-4 fw-semibold w-100"
+								href="abstract.html"
+								>Abstract Submission</a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="navBtnCta btn btn-warning rounded-pill px-4 fw-bold w-100"
+								href="registration.html"
+								>Registration</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- ================= PAGE HEADER ================= -->
+		<header class="pageHeader text-white">
+			<div class="container">
+				<span
+					class="badge rounded-pill text-bg-warning text-primary px-3 py-2 mb-3"
+					data-aos="fade-down"
+				>
+					<i class="fa-solid fa-file-lines me-1" aria-hidden="true"></i> Call for
+					Abstracts
+				</span>
+				<h1 class="text-white fw-bold display-5" data-aos="fade-up" data-aos-delay="100">
+					Submit Your Abstract
+				</h1>
+				<p class="lead mb-0 opacity-75" data-aos="fade-up" data-aos-delay="200">
+					Abstract deadline: <strong>30 November 2026</strong>. Accepted formats: PDF,
+					DOC, DOCX (max 5 MB).
+				</p>
+			</div>
+		</header>
+
+		<!-- ================= FORM ================= -->
+		<main class="container formWrap">
+			<div class="card formCard border-0 shadow" data-aos="fade-up">
+				<div class="card-body p-4 p-lg-5">
+					<form id="abstractForm" novalidate>
+						<!-- Honeypot -->
+						<input
+							type="text"
+							name="website"
+							class="d-none"
+							tabindex="-1"
+							autocomplete="off"
+							aria-hidden="true"
+						/>
+
+						<!-- Author details -->
+						<h2 class="h5 fw-bold mb-3" data-aos="fade-right">Author Details</h2>
+						<div class="row g-3 mb-4">
+							<div class="col-md-3" data-aos="fade-up">
+								<label for="absTitle" class="form-label fw-semibold"
+									>Title <span class="text-danger">*</span></label
+								>
+								<select id="absTitle" name="title" class="form-select" required>
+									<option value="" selected disabled>Select</option>
+									<option>Dr.</option>
+									<option>Prof.</option>
+									<option>Mr.</option>
+									<option>Ms.</option>
+									<option>Other</option>
+								</select>
+								<div class="invalid-feedback">Please select a title.</div>
+							</div>
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
+								<label for="absFirstName" class="form-label fw-semibold"
+									>First Name <span class="text-danger">*</span></label
+								>
+								<input
+									type="text"
+									id="absFirstName"
+									name="first_name"
+									class="form-control"
+									maxlength="60"
+									autocomplete="given-name"
+									required
+								/>
+								<div class="invalid-feedback">Please enter your first name.</div>
+							</div>
+							<div class="col-md-5" data-aos="fade-up" data-aos-delay="100">
+								<label for="absLastName" class="form-label fw-semibold"
+									>Last Name <span class="text-danger">*</span></label
+								>
+								<input
+									type="text"
+									id="absLastName"
+									name="last_name"
+									class="form-control"
+									maxlength="60"
+									autocomplete="family-name"
+									required
+								/>
+								<div class="invalid-feedback">Please enter your last name.</div>
+							</div>
+
+							<div class="col-md-6" data-aos="fade-up">
+								<label for="absEmail" class="form-label fw-semibold"
+									>Email Address <span class="text-danger">*</span></label
+								>
+								<input
+									type="email"
+									id="absEmail"
+									name="email"
+									class="form-control"
+									maxlength="120"
+									autocomplete="email"
+									required
+								/>
+								<div class="invalid-feedback">
+									Please enter a valid email address.
+								</div>
+							</div>
+
+							<div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+								<label for="absPhone" class="form-label fw-semibold"
+									>Phone Number <span class="text-danger">*</span></label
+								>
+								<div class="input-group">
+									<select
+										id="absPhoneCode"
+										name="phone_code"
+										class="form-select phoneCode"
+										aria-label="Country code"
+										required
+									></select>
+									<input
+										type="tel"
+										id="absPhone"
+										name="phone"
+										class="form-control"
+										inputmode="numeric"
+										pattern="[0-9 ]{6,15}"
+										maxlength="15"
+										autocomplete="tel-national"
+										placeholder="9876543210"
+										required
+									/>
+									<div class="invalid-feedback">
+										Enter a valid phone number (6–15 digits).
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-6" data-aos="fade-up">
+								<label for="absCountry" class="form-label fw-semibold"
+									>Country <span class="text-danger">*</span></label
+								>
+								<select
+									id="absCountry"
+									name="country"
+									class="form-select"
+									required
+								></select>
+								<div class="invalid-feedback">Please select your country.</div>
+							</div>
+							<div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+								<label for="absOrg" class="form-label fw-semibold"
+									>University / Organization
+									<span class="text-danger">*</span></label
+								>
+								<input
+									type="text"
+									id="absOrg"
+									name="organization"
+									class="form-control"
+									maxlength="150"
+									autocomplete="organization"
+									required
+								/>
+								<div class="invalid-feedback">Please enter your organization.</div>
+							</div>
+							<div class="col-md-6" data-aos="fade-up">
+								<label for="absDesignation" class="form-label fw-semibold"
+									>Designation <span class="text-danger">*</span></label
+								>
+								<input
+									type="text"
+									id="absDesignation"
+									name="designation"
+									class="form-control"
+									maxlength="100"
+									autocomplete="organization-title"
+									required
+								/>
+								<div class="invalid-feedback">Please enter your designation.</div>
+							</div>
+						</div>
+
+						<!-- Abstract details -->
+						<h2 class="h5 fw-bold mb-3" data-aos="fade-right">Abstract Details</h2>
+						<div class="row g-3 mb-4">
+							<div class="col-12" data-aos="fade-up">
+								<label for="absTitleText" class="form-label fw-semibold"
+									>Abstract Title <span class="text-danger">*</span></label
+								>
+								<input
+									type="text"
+									id="absTitleText"
+									name="abstract_title"
+									class="form-control"
+									maxlength="200"
+									required
+								/>
+								<div class="invalid-feedback">Please enter the abstract title.</div>
+							</div>
+
+							<div class="col-md-6" data-aos="fade-up">
+								<label for="absTrack" class="form-label fw-semibold"
+									>Research Topic / Track
+									<span class="text-danger">*</span></label
+								>
+								<select
+									id="absTrack"
+									name="research_track"
+									class="form-select"
+									required
+								>
+									<option value="" selected disabled>Select track</option>
+									<option>Life Sciences</option>
+									<option>Physical Sciences</option>
+									<option>Engineering and Technology</option>
+									<option>Medical and Health Sciences</option>
+									<option>Environmental Sciences</option>
+									<option>Computer Science and AI</option>
+									<option>Other</option>
+								</select>
+								<div class="invalid-feedback">Please select a track.</div>
+							</div>
+
+							<div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+								<label for="absPresType" class="form-label fw-semibold"
+									>Presentation Type <span class="text-danger">*</span></label
+								>
+								<select
+									id="absPresType"
+									name="presentation_type"
+									class="form-select"
+									required
+								>
+									<option value="" selected disabled>Select type</option>
+									<option>Oral Presentation</option>
+									<option>Poster Presentation</option>
+									<option>Virtual Presentation</option>
+								</select>
+								<div class="invalid-feedback">
+									Please select a presentation type.
+								</div>
+							</div>
+
+							<div class="col-12" data-aos="fade-up">
+								<label for="absCoAuthors" class="form-label fw-semibold"
+									>Co-author Details
+									<span class="text-body-secondary fw-normal"
+										>(optional)</span
+									></label
+								>
+								<textarea
+									id="absCoAuthors"
+									name="co_authors"
+									class="form-control"
+									rows="2"
+									maxlength="500"
+									placeholder="Name, organization, email (one co-author per line)"
+								></textarea>
+							</div>
+
+							<div class="col-12" data-aos="fade-up">
+								<label for="absDescription" class="form-label fw-semibold"
+									>Abstract Description <span class="text-danger">*</span></label
+								>
+								<textarea
+									id="absDescription"
+									name="abstract_description"
+									class="form-control"
+									rows="8"
+									data-word-limit="300"
+									required
+									aria-describedby="wordCounter"
+								></textarea>
+								<div class="d-flex justify-content-between mt-1 small">
+									<div
+										class="invalid-feedback d-block"
+										id="descError"
+										style="display: none !important"
+									></div>
+									<div
+										id="wordCounter"
+										class="ms-auto text-body-secondary"
+										aria-live="polite"
+									>
+										0 / 300 words
+									</div>
+								</div>
+							</div>
+
+							<div class="col-12" data-aos="fade-up">
+								<label for="absKeywords" class="form-label fw-semibold"
+									>Keywords <span class="text-danger">*</span></label
+								>
+								<input
+									type="text"
+									id="absKeywords"
+									name="keywords"
+									class="form-control"
+									maxlength="200"
+									placeholder="e.g. machine learning, genomics, climate"
+									required
+								/>
+								<div class="form-text">
+									Separate keywords with commas (3 to 6 recommended).
+								</div>
+								<div class="invalid-feedback">
+									Please enter at least one keyword.
+								</div>
+							</div>
+						</div>
+
+						<!-- File upload -->
+						<h2 class="h5 fw-bold mb-3" data-aos="fade-right">Abstract File</h2>
+						<div class="mb-4" data-aos="fade-up">
+							<label for="absFile" class="form-label fw-semibold"
+								>Upload File <span class="text-danger">*</span></label
+							>
+							<input
+								type="file"
+								id="absFile"
+								name="abstract_file"
+								class="form-control"
+								accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+								required
+							/>
+							<div class="form-text">PDF, DOC or DOCX only. Maximum size 5 MB.</div>
+							<div class="invalid-feedback" id="fileError">
+								Please upload your abstract file.
+							</div>
+
+							<div id="fileInfo" class="fileInfo d-none mt-2">
+								<i
+									class="fa-solid fa-file-lines text-secondary me-2"
+									aria-hidden="true"
+								></i>
+								<span id="fileName" class="fw-semibold"></span>
+								<span id="fileSize" class="text-body-secondary ms-2"></span>
+							</div>
+
+							<div
+								id="uploadProgressWrap"
+								class="progress mt-3 d-none"
+								role="progressbar"
+								aria-label="Upload progress"
+								aria-valuenow="0"
+								aria-valuemin="0"
+								aria-valuemax="100"
+								style="height: 10px"
+							>
+								<div
+									id="uploadProgressBar"
+									class="progress-bar bg-warning"
+									style="width: 0%"
+								></div>
+							</div>
+						</div>
+
+						<div class="form-check mb-4" data-aos="fade-up">
+							<input
+								class="form-check-input"
+								type="checkbox"
+								id="absConsent"
+								name="consent"
+								value="1"
+								required
+							/>
+							<label class="form-check-label" for="absConsent">
+								I declare that this abstract is my original work, and I agree to the
+								<a href="#" class="text-secondary">Privacy Policy</a>.
+								<span class="text-danger">*</span>
+							</label>
+							<div class="invalid-feedback">You must accept to continue.</div>
+						</div>
+
+						<button
+							type="submit"
+							id="absSubmit"
+							class="btn btn-warning btn-lg rounded-pill px-5 fw-bold w-100 w-md-auto"
+							data-aos="zoom-in"
+						>
+							<span
+								class="spinner-border spinner-border-sm me-2 d-none"
+								role="status"
+								aria-hidden="true"
+							></span>
+							<span class="btnLabel">Submit Abstract</span>
+						</button>
+					</form>
+				</div>
+			</div>
+		</main>
+
+		<!-- ================= FOOTER ================= -->
+		<footer class="siteFooter text-center py-4">
+			<div class="container small">
+				&copy; <span id="footerYear">2027</span> Global Science Conference. All rights
+				reserved.
+			</div>
+		</footer>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			defer
+		></script>
+		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js"
+			defer
+		></script>
+		<script src="assets/js/main.js" defer></script>
+	</body>
+</html>
